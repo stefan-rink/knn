@@ -1,8 +1,17 @@
+/**
+ *
+ * Beispiel-Aufrufe
+ *
+ */
 var app = {
     oneDimensionSample: function () {
 
+        // Neues KNN-Objekt mit einer Dimension erzeugen
         var knn = new KNN(1);
 
+        // Datensätze hinterlegen
+        // Dimensionen:
+        // 1. Displaygröße in Zoll
         var smartphone1 = new DataSet('smartphone', [5.5]);
         knn.addDataset(smartphone1);
         var smartphone2 = new DataSet('smartphone', [5.2]);
@@ -26,7 +35,8 @@ var app = {
         var tv4 = new DataSet('tv', [54]);
         knn.addDataset(tv4);
 
-        knn.classify([50]);
+        // Klassifiziert ein Gerät mit Displaygröße 50 Zoll
+        console.log(knn.classify([50]));
     },
 
     threeDimensionsSample: function () {
@@ -79,7 +89,7 @@ var app = {
         var dataset = new DataSet('elephant', [5560, 3.2, 41]);
         knn.addDataset(dataset);
 
-        knn.classify([4999, 4, 35]);
+        console.log(knn.classify([4999, 4, 35]));
     }
 };
 
