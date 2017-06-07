@@ -7,7 +7,7 @@ function KNN(dimensions) {
      * @param dataset Instanz der Klasse DataSet, deren Anzahl an Parametern der Anzahl in
      *     Dimensionen des KNN entsprechen muss
      */
-    KNN.prototype.addDataset = function (dataset) {
+     this.addDataset = function (dataset) {
         // Prüfen, ob gültige Datensatz-Instanz
         if (!(dataset instanceof DataSet)) {
             return false;
@@ -22,11 +22,11 @@ function KNN(dimensions) {
         this.datasets.push(dataset);
     };
 
-    KNN.prototype.getDatasets = function () {
+    this.getDatasets = function () {
         return this.datasets;
     };
 
-    KNN.prototype.getDataset = function (index) {
+    this.getDataset = function (index) {
         if (index < this.datasets.length && index > -1) {
             return this.datasets[index];
         }
@@ -38,7 +38,7 @@ function KNN(dimensions) {
      * @param index
      * @return {boolean}
      */
-    KNN.prototype.deleteDataset = function (index) {
+    this.deleteDataset = function (index) {
         if (index < this.datasets.length && index > -1) {
             this.datasets.splice(index, 1);
         } else {
@@ -53,7 +53,7 @@ function KNN(dimensions) {
      * @param add Boolean, der angibt, ob der geprüfte Datensatz zu den trainierten Daten
      *     hinzugefügt wird
      */
-    KNN.prototype.classify = function (props, add) {
+    this.classify = function (props, add) {
         add = add || true;
 
 
@@ -145,7 +145,7 @@ function KNN(dimensions) {
      * @param vector2
      * @return {*}
      */
-    KNN.prototype.distance = function (vector1, vector2) {
+    this.distance = function (vector1, vector2) {
         // Beide Vektoren müssen ein Array sein
         if (!Array.isArray(vector1) || !Array.isArray(vector2)) {
             return false;
